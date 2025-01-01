@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+actor "Admin IFCS" as AM  
+' Administrator IFCS
+actor "Member IFCS" as AD
+' Member IFCS
+actor "Admin Dashboard IFCS" as MM
+' Dashboard IFCS
+rectangle IFCS {
+    usecase "Menambah Corporate" as corp
+    usecase "Menambah Kontrak Corporate" as kontrak_corp
+    usecase "Membuat User Corporate" as user_corp
+    usecase "Melihat Transaksi Mitra" as transc_mitra
+    usecase "Membuat Corporate Sector" as corp_sec
+    usecase "Konfigurasi Tarif Point" as k_tarif_p
+    usecase "Membuat User Group" as u_group
+    usecase "Membuat User Account" as u_account
+    usecase "Konfigurasi Peak Season" as k_peak_s
+    usecase "Konfigurasi Reward Sector" as k_reward_s
+    usecase "Konfigurasi Point Reward" as k_point_r
+    usecase "Melakukan Book Ticket" as membuat_p
+    usecase "Membuat User Mitra" as m_user_mitra
+
+MM --> corp
+MM --> kontrak_corp
+MM --> user_corp
+MM --> transc_mitra
+MM --> corp_sec
+MM --> k_tarif_p
+MM --> u_group
+MM --> u_account
+MM --> k_peak_s
+MM --> k_reward_s
+MM --> k_point_r
+AM --> membuat_p
+AD --> membuat_p
+AM --> m_user_mitra
+
+@enduml
